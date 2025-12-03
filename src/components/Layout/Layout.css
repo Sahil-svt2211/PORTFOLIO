@@ -1,0 +1,144 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 1001;
+  width: 40.5px;
+  height: 40.5px;
+  background: color-mix(in srgb, var(--primary-color) 30%, transparent);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease, background 2s ease-in-out, border-color 2s ease-in-out, box-shadow 2s ease-in-out;
+  box-shadow: 0 4px 15px color-mix(in srgb, var(--primary-color) 40%, transparent);
+}
+
+.mobile-menu-toggle:hover {
+  background: color-mix(in srgb, var(--primary-color) 50%, transparent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--primary-color) 60%, transparent);
+}
+
+.mobile-menu-toggle:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+.mobile-menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.sidebar-container {
+  width: 270px;
+  flex-shrink: 0;
+}
+
+.main-content {
+  flex: 1;
+  padding: 18px;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(9px);
+  border-radius: 0 18px 18px 0;
+  margin: 18px 18px 18px 0;
+  overflow-y: auto;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 1023px) {
+  .sidebar-container {
+    width: 250px;
+  }
+  
+  .main-content {
+    padding: 15px;
+    margin: 15px 15px 15px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  .mobile-menu-overlay {
+    display: block;
+  }
+  
+  .sidebar-container {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 280px;
+    z-index: 1000;
+    transition: left 0.3s ease;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  .sidebar-container.mobile-open {
+    left: 0;
+    animation: slideIn 0.3s ease;
+  }
+  
+  .main-content {
+    margin: 0;
+    border-radius: 0;
+    padding: 10px;
+    padding-top: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-menu-toggle {
+    top: 20px;
+    left: 10px;
+  }
+  
+  .sidebar-container {
+    width: 260px;
+  }
+  
+  .main-content {
+    padding: 8px;
+    padding-top: 55px;
+  }
+}

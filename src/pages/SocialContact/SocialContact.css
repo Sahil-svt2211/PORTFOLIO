@@ -1,0 +1,235 @@
+.social-contact {
+  padding: 18px;
+  color: white;
+  max-width: 1260px;
+  margin: 0 auto;
+}
+
+.social-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.social-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  background: linear-gradient(45deg, #fff, #e0e7ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.social-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
+  gap: 27px;
+  margin-bottom: 54px;
+}
+
+.social-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(13.5px);
+  border-radius: 22.5px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.social-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.social-preview {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.social-card:hover .preview-image {
+  transform: scale(1.1);
+}
+
+.preview-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.social-card:hover .preview-overlay {
+  opacity: 1;
+}
+
+.platform-icon {
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+}
+
+.social-content {
+  padding: 22.5px;
+}
+
+.social-header-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.platform-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.platform-stats {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 5.4px 10.8px;
+  border-radius: 18px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.platform-description {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.platform-preview {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.platform-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7.2px;
+  padding: 10.8px 18px;
+  border-radius: 22.5px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.platform-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.social-footer {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(13.5px);
+  border-radius: 22.5px;
+  padding: 36px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.footer-content p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+.quick-links {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.quick-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border: 2px solid;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.quick-link:hover {
+  transform: translateY(-3px) scale(1.1);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .social-title {
+    font-size: 2rem;
+  }
+  
+  .social-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .social-card {
+    margin: 0 10px;
+  }
+  
+  .social-header-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .platform-stats {
+    align-self: flex-start;
+  }
+  
+  .quick-links {
+    gap: 15px;
+  }
+  
+  .quick-link {
+    width: 45px;
+    height: 45px;
+  }
+}

@@ -1,0 +1,728 @@
+.profile {
+  padding: 20px;
+  color: white;
+  position: relative;
+  padding-top: 80px;
+}
+
+.social-links-header {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  display: flex;
+  gap: 13.5px;
+  z-index: 100;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40.5px;
+  height: 40.5px;
+  background: color-mix(in srgb, var(--primary-color) 30%, transparent);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease, background 2s ease-in-out, border-color 2s ease-in-out, box-shadow 2s ease-in-out;
+  box-shadow: 0 4px 15px color-mix(in srgb, var(--primary-color) 40%, transparent);
+}
+
+.social-link:hover {
+  background: color-mix(in srgb, var(--primary-color) 50%, transparent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--primary-color) 60%, transparent);
+}
+
+.social-link.linkedin:hover {
+  background: rgba(0, 119, 181, 0.8);
+  border-color: #0077b5;
+  box-shadow: 0 6px 20px rgba(0, 119, 181, 0.5);
+}
+
+.social-link.github:hover {
+  background: rgba(51, 51, 51, 0.8);
+  border-color: #333;
+  box-shadow: 0 6px 20px rgba(51, 51, 51, 0.5);
+}
+
+.profile-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1080px;
+  margin: 0 auto 54px;
+  padding: 36px 18px;
+  gap: 36px;
+}
+
+.animated-character {
+  width: 288px;
+  height: 405px;
+  flex-shrink: 0;
+  will-change: transform;
+  order: 2;
+}
+
+.animated-character img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 40px rgba(0, 0, 0, 0.3));
+  transition: all 0.3s ease, filter 2s ease-in-out;
+}
+
+.profile-header {
+  text-align: left;
+  flex: 1;
+  max-width: 600px;
+  order: 1;
+}
+
+.welcome-message {
+  margin-bottom: 25px;
+}
+
+.welcome-hey {
+  font-size: 4.4rem;
+  font-weight: 500;
+  margin: 0 0 5px 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.welcome-title {
+  font-size: 8.6rem;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+  line-height: 1.1;
+  background: linear-gradient(45deg, #fff, #f0f0f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.welcome-to {
+  font-size: 4.4rem;
+  font-weight: 500;
+  margin: 0 0 20px 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.welcome-name {
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.profile-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.profile-description {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.profile-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.intro-section {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(9px);
+  border-radius: 18px;
+  padding: 27px;
+  margin-bottom: 27px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.intro-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.intro-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 30px;
+}
+
+.download-cv-btn {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border: none;
+  padding: 13.5px 27px;
+  border-radius: 45px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease, background 2s ease-in-out;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.download-cv-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.7);
+  background: linear-gradient(45deg, var(--secondary-color), var(--tertiary-color));
+}
+
+.skills-section {
+  margin-bottom: 40px;
+}
+
+.skills-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+  gap: 13.5px;
+  margin-bottom: 27px;
+}
+
+.skill-tag {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(9px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 13.5px;
+  padding: 13.5px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  background: rgba(0, 0, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+.mindset-section {
+  margin-bottom: 40px;
+}
+
+.mindset-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.mindset-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 18px;
+  margin-bottom: 27px;
+}
+
+.mindset-card {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(9px);
+  border-radius: 18px;
+  padding: 27px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mindset-card:hover {
+  background: rgba(0, 0, 0, 0.5);
+  transform: translateY(-5px);
+}
+
+.mindset-icon {
+  width: 45px;
+  height: 45px;
+  margin-bottom: 18px;
+  color: var(--primary-color);
+  transition: color 2s ease-in-out;
+}
+
+.mindset-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.mindset-card p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+}
+
+.glimpse-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(252px, 1fr));
+  gap: 18px;
+}
+
+.glimpse-card {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(9px);
+  border-radius: 18px;
+  padding: 22.5px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.glimpse-card:hover {
+  background: rgba(0, 0, 0, 0.5);
+  transform: translateY(-3px);
+}
+
+.glimpse-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.glimpse-card p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.glimpse-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--light-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease, color 2s ease-in-out;
+}
+
+.glimpse-btn:hover {
+  color: var(--primary-color);
+  transform: translateX(5px);
+}
+
+/* Large Desktop (1440px and up) */
+@media (min-width: 1440px) {
+  .profile-header-container {
+    max-width: 1400px;
+  }
+  
+  .profile-content {
+    max-width: 1400px;
+  }
+}
+
+/* Desktop (1024px - 1439px) */
+@media (max-width: 1439px) {
+  .welcome-hey {
+    font-size: 3.2rem;
+  }
+  
+  .welcome-title {
+    font-size: 6rem;
+  }
+  
+  .welcome-to {
+    font-size: 3.2rem;
+  }
+  
+  .profile-header-container {
+    gap: 20px;
+    padding: 30px 15px;
+  }
+  
+  .animated-character {
+    width: 200px;
+    height: 280px;
+  }
+}
+
+/* Tablet Landscape (768px - 1023px) */
+@media (max-width: 1023px) {
+  .profile {
+    padding: 15px;
+    padding-top: 60px;
+  }
+  
+  .welcome-hey {
+    font-size: 3.5rem;
+  }
+  
+  .welcome-title {
+    font-size: 6.5rem;
+  }
+  
+  .welcome-to {
+    font-size: 3.5rem;
+  }
+  
+  .welcome-name {
+    font-size: 1.3rem;
+  }
+  
+  .profile-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .profile-header-container {
+    gap: 25px;
+    padding: 30px 15px;
+  }
+  
+  .animated-character {
+    width: 250px;
+    height: 350px;
+  }
+  
+  .intro-section {
+    padding: 25px;
+  }
+  
+  .intro-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+  }
+  
+  .mindset-cards {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+  }
+  
+  .glimpse-sections {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+  }
+}
+
+/* Tablet Portrait (481px - 767px) */
+@media (max-width: 767px) {
+  .profile {
+    padding: 10px;
+    padding-top: 50px;
+  }
+  
+  .welcome-hey {
+    font-size: 2.5rem;
+  }
+  
+  .welcome-title {
+    font-size: 4.5rem;
+  }
+  
+  .welcome-to {
+    font-size: 2.5rem;
+  }
+  
+  .welcome-name {
+    font-size: 1.1rem;
+  }
+  
+  .profile-subtitle {
+    font-size: 1rem;
+  }
+  
+  .profile-description {
+    font-size: 0.95rem;
+  }
+  
+  .profile-header-container {
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px 10px;
+  }
+  
+  .profile-header {
+    text-align: center;
+    order: 2;
+    max-width: 100%;
+  }
+  
+  .profile-subtitle {
+    max-width: 100%;
+  }
+  
+  .profile-description {
+    max-width: 100%;
+  }
+  
+  .animated-character {
+    width: 200px;
+    height: 280px;
+    order: 1;
+  }
+  
+  .social-links-header {
+    top: 20px;
+    right: 10px;
+    gap: 10px;
+  }
+  
+  .social-link {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .intro-section {
+    padding: 20px;
+  }
+  
+  .intro-section h2 {
+    font-size: 1.6rem;
+  }
+  
+  .intro-section p {
+    font-size: 1rem;
+  }
+  
+  .download-cv-btn {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+  }
+  
+  .skills-section h2,
+  .mindset-section h2 {
+    font-size: 1.6rem;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+  }
+  
+  .skill-tag {
+    padding: 12px 15px;
+    font-size: 0.9rem;
+  }
+  
+  .mindset-cards {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .mindset-card {
+    padding: 25px;
+  }
+  
+  .mindset-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .mindset-card h3 {
+    font-size: 1.2rem;
+  }
+  
+  .mindset-card p {
+    font-size: 0.95rem;
+  }
+  
+  .glimpse-sections {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .glimpse-card {
+    padding: 20px;
+  }
+  
+  .glimpse-card h3 {
+    font-size: 1.2rem;
+  }
+  
+  .glimpse-card p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile (320px - 480px) */
+@media (max-width: 480px) {
+  .profile {
+    padding: 8px;
+    padding-top: 40px;
+  }
+  
+  .welcome-hey {
+    font-size: 1.8rem;
+  }
+  
+  .welcome-title {
+    font-size: 3.2rem;
+  }
+  
+  .welcome-to {
+    font-size: 1.8rem;
+  }
+  
+  .welcome-name {
+    font-size: 1rem;
+  }
+  
+  .profile-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .profile-description {
+    font-size: 0.85rem;
+  }
+  
+  .profile-header-container {
+    gap: 20px;
+    padding: 15px 8px;
+    margin-bottom: 30px;
+  }
+  
+  .animated-character {
+    width: 160px;
+    height: 220px;
+  }
+  
+  .social-links-header {
+    top: 20px;
+    right: 8px;
+    gap: 8px;
+  }
+  
+  .social-link {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .intro-section {
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .intro-section h2 {
+    font-size: 1.4rem;
+  }
+  
+  .intro-section p {
+    font-size: 0.9rem;
+  }
+  
+  .download-cv-btn {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+  
+  .skills-section,
+  .mindset-section {
+    margin-bottom: 25px;
+  }
+  
+  .skills-section h2,
+  .mindset-section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 8px;
+  }
+  
+  .skill-tag {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+  
+  .mindset-cards {
+    gap: 12px;
+  }
+  
+  .mindset-card {
+    padding: 20px;
+  }
+  
+  .mindset-icon {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 15px;
+  }
+  
+  .mindset-card h3 {
+    font-size: 1.1rem;
+  }
+  
+  .mindset-card p {
+    font-size: 0.85rem;
+  }
+  
+  .glimpse-sections {
+    gap: 12px;
+  }
+  
+  .glimpse-card {
+    padding: 15px;
+  }
+  
+  .glimpse-card h3 {
+    font-size: 1.1rem;
+  }
+  
+  .glimpse-card p {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+  }
+  
+  .glimpse-btn {
+    font-size: 0.85rem;
+  }
+}
+
+/* Extra Small Mobile (below 320px) */
+@media (max-width: 319px) {
+  .profile {
+    padding: 5px;
+    padding-top: 35px;
+  }
+  
+  .welcome-hey {
+    font-size: 1.5rem;
+  }
+  
+  .welcome-title {
+    font-size: 2.5rem;
+  }
+  
+  .welcome-to {
+    font-size: 1.5rem;
+  }
+  
+  .welcome-name {
+    font-size: 0.9rem;
+  }
+  
+  .animated-character {
+    width: 140px;
+    height: 190px;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  }
+  
+  .skill-tag {
+    padding: 8px 10px;
+    font-size: 0.75rem;
+  }
+}
